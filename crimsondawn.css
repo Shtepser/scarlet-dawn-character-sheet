@@ -1,0 +1,55 @@
+.charsheet .sheet-grid-section {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows:  70px 10px 40px 10px 30px 20px 20px;
+  grid-template-areas:"namelvl         feats  inventory"
+                      "characteristics feats  inventory"
+                      "characteristics scars  inventory"
+                      "characteristics armor  inventory"
+                      "savingthrows    armor  inventory"
+                      "savingthrows    weapon inventory"
+                      "hitpoints       weapon inventory";
+  grid-gap: 8px;
+}
+.charsheet div.sheet-block {
+  display: grid;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.charsheet div.sheet-namelvl {
+  grid-area: namelvl;
+}
+
+.charsheet div.sheet-characteristics {
+    grid-area: characteristics;
+}
+
+.charsheet div.sheet-savingthrows {
+    grid-area: savingthrows;
+}
+
+.charsheet div.sheet-hitpoints {
+  grid-area: hitpoints;
+}
+
+.charsheet div.sheet-feats {
+  grid-area: feats;
+}
+
+.charsheet div.sheet-scars {
+  grid-area: scars;
+}
+
+.charsheet div.sheet-armor {
+  grid-area: armor;
+}
+
+.charsheet div.sheet-weapon {
+  grid-area: weapon;
+}
+
+.charsheet div.sheet-inventory {
+  grid-area: inventory;
+}
