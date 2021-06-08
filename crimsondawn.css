@@ -1,25 +1,39 @@
 .charsheet .sheet-grid-section {
-  display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-template-rows:  70px 10px 40px 10px 30px 20px 20px;
-  grid-template-areas:"namelvl         feats  inventory"
-                      "characteristics feats  inventory"
-                      "characteristics scars  inventory"
-                      "characteristics armor  inventory"
-                      "savingthrows    armor  inventory"
-                      "savingthrows    weapon inventory"
-                      "hitpoints       weapon inventory";
-  grid-gap: 8px;
+    display: grid;
+    grid-template-columns: 280px 280px 280px;
+    grid-template-rows:    210px 30px 120px 30px 90px 60px 60px;
+    grid-template-areas:"namelvl         feats  inventory"
+                        "characteristics feats  inventory"
+                        "characteristics scars  inventory"
+                        "characteristics armor  inventory"
+                        "savingthrows    armor  inventory"
+                        "savingthrows    weapon inventory"
+                        "hitpoints       weapon inventory";
+    grid-gap: 10px;
+  
+    background: white;
 }
+
+.charsheet .sheet-pagetitle {
+    text-decoration: underline;
+    font-size: 20px;
+    font-style: bold;
+    text-align: center;
+}
+
+.charsheet input.sheet-attrubutetextbox {
+    text-decoration: underline;
+}
+
 .charsheet div.sheet-block {
-  display: grid;
-  justify-content: center;
-  padding: 5px;
-  border: 1px solid black;
+    display: grid;
+    justify-content: center;
+    padding: 8px;
+    border: 1px solid black;
 }
 
 .charsheet div.sheet-namelvl {
-  grid-area: namelvl;
+    grid-area: namelvl;
 }
 
 .charsheet div.sheet-characteristics {
@@ -31,25 +45,25 @@
 }
 
 .charsheet div.sheet-hitpoints {
-  grid-area: hitpoints;
+    grid-area: hitpoints;
 }
 
 .charsheet div.sheet-feats {
-  grid-area: feats;
+    grid-area: feats;
 }
 
 .charsheet div.sheet-scars {
-  grid-area: scars;
+    grid-area: scars;
 }
 
 .charsheet div.sheet-armor {
-  grid-area: armor;
+    grid-area: armor;
 }
 
 .charsheet div.sheet-weapon {
-  grid-area: weapon;
+    grid-area: weapon;
 }
 
 .charsheet div.sheet-inventory {
-  grid-area: inventory;
+    grid-area: inventory;
 }
