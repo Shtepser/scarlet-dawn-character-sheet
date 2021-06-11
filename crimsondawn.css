@@ -14,11 +14,20 @@
     background: white;
 }
 
+.charsheet p {
+    margin: 0px;
+}
+
 .charsheet .sheet-pagetitle {
     text-decoration: underline;
     font-size: 20px;
     font-style: bold;
     text-align: center;
+    margin-bottom: 9px;
+}
+
+.charsheet .attribute-name {
+    font-size: 10px;
 }
 
 .charsheet input.sheet-attrubutetextbox {
@@ -31,18 +40,47 @@
     font-family: Helvetica;
     border: none;
     border-bottom: 1px solid black;
-    width: 170px;
+    width: 200px;
+    font-size: 10px;
+}
+
+.charsheet input.sheet-attrubutetextbox-halfwidth {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    color: #000000;
+    font-family: Helvetica;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 25px;
+    font-size: 10px;
 }
 
 .charsheet div.sheet-block {
     display: grid;
     justify-content: center;
-    padding: 8px;
     border: 1px solid black;
+}
+
+.charsheet div.sheet-row-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: right;
+    align-content: right;
 }
 
 .charsheet div.sheet-block .sheet-align-right {
     text-align: right;
+}
+
+.charsheet div.sheet-block .sheet-align-right-halfwidth {
+    text-align: right;
+    display: flex;
+    width: 50%;
 }
 
 .charsheet div.sheet-namelvl {
