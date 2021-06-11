@@ -22,7 +22,16 @@
 }
 
 .charsheet input.sheet-attrubutetextbox {
-    text-decoration: underline;
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    color: #000000;
+    font-family: Helvetica;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 170px;
 }
 
 .charsheet div.sheet-block {
@@ -30,6 +39,10 @@
     justify-content: center;
     padding: 8px;
     border: 1px solid black;
+}
+
+.charsheet div.sheet-block .sheet-align-right {
+    text-align: right;
 }
 
 .charsheet div.sheet-namelvl {
