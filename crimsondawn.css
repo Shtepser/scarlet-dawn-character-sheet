@@ -16,6 +16,7 @@
 
 .charsheet p {
     margin: 0px;
+    font-size: 12px;
 }
 
 .charsheet .sheet-pagetitle {
@@ -27,7 +28,15 @@
 }
 
 .charsheet .attribute-name {
-    font-size: 10px;
+    font-size: 12px;
+}
+
+.charsheet .sheet-stat-row {
+    line-height: 12px;
+}
+
+.charsheet .sheet-stat-row input {
+    padding: 0px;
 }
 
 .charsheet input.sheet-attrubutetextbox {
@@ -41,7 +50,7 @@
     border: none;
     border-bottom: 1px solid black;
     width: 200px;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .charsheet input.sheet-attrubutetextbox-halfwidth {
@@ -54,8 +63,8 @@
     font-family: Helvetica;
     border: none;
     border-bottom: 1px solid black;
-    width: 25px;
-    font-size: 10px;
+    width: 50px;
+    font-size: 12px;
 }
 
 .charsheet div.sheet-block {
@@ -79,7 +88,6 @@
 
 .charsheet div.sheet-block .sheet-align-right-halfwidth {
     text-align: right;
-    display: flex;
     width: 50%;
 }
 
