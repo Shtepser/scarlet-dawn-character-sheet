@@ -27,8 +27,17 @@
     margin-bottom: 9px;
 }
 
+.charsheet .sheet-pageblocktitle {
+    font-size: 16px;
+    text-align: left;
+}
+
 .charsheet .attribute-name {
     font-size: 12px;
+}
+
+.charsheet .sheet-char-name {
+    width: 40%;
 }
 
 .charsheet .sheet-stat-row {
@@ -64,6 +73,48 @@
     border: none;
     border-bottom: 1px solid black;
     width: 50px;
+    font-size: 12px;
+}
+
+.charsheet .sheet-chars-titles {
+    font-style: italic;
+    font-size: 10px;
+}
+
+.charsheet .sheet-chars-value-title {
+    margin-left: 90px;
+}
+
+.charsheet .sheet-chars-mod-title {
+    margin-left: 20px;
+}
+
+.charsheet input.sheet-statbox {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    color: #000000;
+    font-family: Helvetica;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 60px;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.charsheet input.sheet-statmodbox {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    color: #000000;
+    font-family: Helvetica;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 70px;
     font-size: 12px;
 }
 
