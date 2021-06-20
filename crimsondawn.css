@@ -89,6 +89,28 @@
     margin-left: 20px;
 }
 
+.charsheet .sheet-savings-titles {
+    font-style: italic;
+    font-size: 10px;
+}
+
+.charsheet .sheet-savings-base-title {
+    margin-left: 70px;
+}
+
+.charsheet .sheet-savings-mod-title {
+    margin-left: 5px;
+}
+
+.charsheet .sheet-savings-penalty-title {
+    margin-left: 0px;
+}
+
+.charsheet .sheet-savings-outcome-title {
+    margin-left: 15px;
+}
+
+
 .charsheet input.sheet-statbox {
     background: none;
     border-style: none;
@@ -116,6 +138,35 @@
     border-bottom: 1px solid black;
     width: 70px;
     font-size: 12px;
+}
+
+.charsheet input.sheet-savingbox {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    color: #000000;
+    font-family: Helvetica;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 45px;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.charsheet input.sheet-savingoutcomebox {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    color: #000000;
+    font-family: Helvetica;
+    border: 1px solid black;
+    width: 40px;
+    font-size: 12px;
+    margin-right: 8px;
 }
 
 .charsheet div.sheet-block {
