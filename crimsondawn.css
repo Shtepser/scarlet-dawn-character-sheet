@@ -30,6 +30,7 @@
 .charsheet .sheet-pageblocktitle {
     font-size: 16px;
     text-align: left;
+    width: 270px;
 }
 
 .charsheet .attribute-name {
@@ -42,6 +43,10 @@
 
 .charsheet .sheet-stat-row {
     line-height: 12px;
+}
+
+.charsheet .sheet-char-row {
+    width: 230px;
 }
 
 .charsheet .sheet-stat-row input {
