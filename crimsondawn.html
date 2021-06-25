@@ -155,16 +155,26 @@
             </span>
         </div>
     
-        <p class="sheet-attributename">Текущие ХП
+        <p class="sheet-attributename">
+            Текущие ХП
             <input class="sheet-currenthpbox" type="text" name="attr_current_hp"></input>
         </p>
     </div>
   
     <div class="sheet-feats sheet-block">
-        <text>Черты</text>
+        <p class="sheet-pageblocktitle">Черты</p>
+        
+        <fieldset class="repeating_feats">
+            <input class="sheet-featbox" type="text" name="attr_featname">
+        </fieldset>
     </div>
+    
     <div class="sheet-scars sheet-block">
-        <text>Шрамы</text>
+        <p class="sheet-pageblocktitle">Шрамы</p>
+
+        <fieldset class="repeating_scars">
+            <input class="sheet-scarbox" type="text" name="attr_scarname">
+        </fieldset>
     </div>
     <div class="sheet-armor sheet-block">
         <text>Доспех</text>
