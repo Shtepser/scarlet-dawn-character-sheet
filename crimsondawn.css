@@ -59,12 +59,16 @@
     padding: 0px;
 }
 
+.charsheet .sheet-no-outline:focus {
+    outline: none;
+}
+
 .charsheet input.sheet-attrubutetextbox {
     background: none;
     border-style: none;
     box-shadow: none;
     border-color: #000000;
-    text-align: left;
+    text-align: center;
     color: #000000;
     font-family: Helvetica;
     border: none;
@@ -78,7 +82,7 @@
     border-style: none;
     box-shadow: none;
     border-color: #000000;
-    text-align: left;
+    text-align: center;
     color: #000000;
     font-family: Helvetica;
     border: none;
@@ -92,7 +96,7 @@
     border-style: none;
     box-shadow: none;
     border-color: #000000;
-    text-align: left;
+    text-align: center;
     color: #000000;
     font-family: Helvetica;
     border: none;
@@ -108,7 +112,7 @@
     border-style: none;
     box-shadow: none;
     border-color: #000000;
-    text-align: left;
+    text-align: center;
     color: #000000;
     font-family: Helvetica;
     border: none;
@@ -241,10 +245,73 @@
     margin-right: 8px;
 }
 
+.charsheet input.sheet-armorclassbox {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    color: #000000;
+    font-family: Helvetica;
+    border: 1px solid black;
+    width: 30px;
+    height: 15px;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.charsheet .sheet-armorclass-attr-name {
+    margin-left: 50px;
+}
+
+.charsheet input.sheet-armortype-box {
+    width: 95px;
+}
+
+.charsheet input.sheet-shield-box {
+    width: 85px;
+}
+
+.charsheet .sheet-armordescription-name {
+    margin-right: auto;
+}
+
+.charsheet .sheet-armordescription-box {
+    resize: none;
+    width: 95%;
+    height: 35px;
+    margin-bottom: 0px;
+}
+
+.charsheet .sheet-penalty-description {
+    font-style: italic;
+    font-size: 9px;
+    margin-left: 7px;
+}
+
+.charsheet .sheet-penalty-description input {
+    border-radius: 50%;
+}
+
 .charsheet div.sheet-block {
     display: grid;
     justify-content: center;
     border: 1px solid black;
+}
+
+.charsheet .sheet-attackbonusbox {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    color: #000000;
+    font-family: Helvetica;
+    border: 1px solid black;
+    width: 30px;
+    height: 15px;
+    font-size: 12px;
+    margin-right: 8px;
 }
 
 .charsheet div.sheet-row-section {
@@ -265,9 +332,24 @@
     width: 50%;
 }
 
+.charsheet div.sheet-block .sheet-align-right-quarterwidth {
+    text-align: right;
+    width: 25%;
+}
+
+.charsheet .sheet-align-right-threequarterwidth {
+    text-align: right;
+    width: 75%;
+}
+
 .charsheet div.sheet-block .sheet-align-left-halfwidth {
     text-align: left;
     width: 50%;
+}
+
+.charsheet div.sheet-block .sheet-align-left-quarterwidth {
+    text-align: left;
+    width: 25%;
 }
 
 .charsheet div.sheet-namelvl {
