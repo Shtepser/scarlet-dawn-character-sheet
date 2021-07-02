@@ -323,6 +323,15 @@
     align-content: right;
 }
 
+.charsheet div.sheet-row-section-blocked {
+    display: block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: right;
+    align-content: right;
+}
+
 .charsheet div.sheet-block .sheet-align-right {
     text-align: right;
 }
