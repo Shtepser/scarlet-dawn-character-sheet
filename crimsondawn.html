@@ -1,4 +1,23 @@
-<div class="sheet-grid-section">
+<script type="text/worker">
+    const buttonlist = ["character","magick"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+</script>
+
+
+<div>
+    <button type="action" name="act_character">Авантюрист</button>
+    <button type="action" name="act_magick">Магия</button>
+</div>
+<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="character"/>
+
+
+<div class="sheet-character-page">
     <div class="sheet-namelvl sheet-block">
         <p class="sheet-pagetitle">
             <text>Авантюрист</text>
@@ -298,5 +317,14 @@
                 <input class="sheet-inventory-summary-weight sheet-no-outline" type="text" name="attr_stacked_summary_weight"></input>
             </p>
         </div>
+    </div>
+</div>
+
+
+<div class="sheet-magick-page">
+    <div class="sheet-magick sheet-block">
+        <p class="sheet-pagetitle">
+            <text>Магия</text>
+        </p>
     </div>
 </div>

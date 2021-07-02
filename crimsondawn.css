@@ -1,7 +1,13 @@
-.charsheet .sheet-grid-section {
+.charsheet div.sheet-character-page {
+    visibility: hidden;
+    height: 0px;
+
     display: grid;
     grid-template-columns: 280px 280px 280px;
-    grid-template-rows:    210px 30px 120px 30px 90px 60px 60px;
+    grid-template-rows:    0px 0px 0px 0px 0px 0px 0px;
+    grid-gap: 10px;
+  
+
     grid-template-areas:"namelvl         feats  inventory"
                         "characteristics feats  inventory"
                         "characteristics scars  inventory"
@@ -9,9 +15,37 @@
                         "savingthrows    armor  inventory"
                         "savingthrows    weapon inventory"
                         "hitpoints       weapon inventory";
+
+    background: white;
+}
+
+.sheet-tabstoggle[value="character"] ~ div.sheet-character-page {
+    grid-template-rows:    210px 30px 120px 30px 90px 60px 60px;
+    height: auto;
+    visibility: visible;
+}
+
+
+.charsheet .sheet-magick-page {
+    visibility: hidden;
+    height: 0px;
+
+    display: grid;
+
+    grid-template-columns: 280px 280px 280px;
+    grid-template-rows: 0px;
     grid-gap: 10px;
   
     background: white;
+
+    
+    grid-template-areas:"magick";
+}
+
+.sheet-tabstoggle[value="magick"] ~ div.sheet-magick-page {
+    grid-template-rows:    210px;
+    height: auto;
+    visibility: visible;
 }
 
 .charsheet p {
@@ -350,7 +384,8 @@
 .charsheet div.sheet-block {
     display: grid;
     justify-content: center;
-    border: 1px solid black;
+
+    border: 1px solid black; /* uncomment before release */
 }
 
 .charsheet .sheet-attackbonusbox {
@@ -515,4 +550,8 @@
 
 .charsheet div.sheet-inventory {
     grid-area: inventory;
+}
+
+.charsheet div.sheet-magick {
+    grid-area: magick;
 }
