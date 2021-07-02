@@ -328,12 +328,12 @@
 }
 
 .charsheet .sheet-weaponstat-description-box {
-    width: 25%;
+    width: 35%;
     margin-left: 0%;
 }
 
 .charsheet .sheet-weaponstat-ammo-box {
-    width: 25%;
+    width: 20%;
     margin-left: 2%;
 }
 
