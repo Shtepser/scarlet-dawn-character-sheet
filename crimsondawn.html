@@ -262,6 +262,41 @@
     </div>
 
     <div class="sheet-inventory sheet-block">
-        <text>Инвентарь</text>
+
+        <div>
+            <p class="sheet-pageblocktitle">Инвентарь</p>
+
+            <p class="sheet-inventory-columns-titles">
+                <span class="sheet-inventory-name-title sheet-prepared-items-name-title">Подготовленные вещи</span>
+                <span class="sheet-inventory-weight-title">Вес</span>
+            </p>
+
+            <fieldset class="repeating_prepareditems">
+                <input class="sheet-inventory-name sheet-no-outline" type="text" name="attr_prepared_item_name"></input>
+                <input class="sheet-inventory-weight sheet-no-outline" type="text" name="attr_prepared_item_weight"></input>
+            </fieldset>
+
+            <p class="sheet-inventory-summary">
+                <span class="sheet-inventory-prepared-summary-title">Общий вес подготовленных вещей</span>
+                <input class="sheet-inventory-summary-weight sheet-no-outline" type="text" name="attr_prepared_summary_weight"></input>
+            </p>
+        </div>
+
+        <div>
+            <p class="sheet-inventory-columns-titles">
+                <span class="sheet-inventory-name-title sheet-stacked-items-name-title">Уложенные вещи</span>
+                <span class="sheet-inventory-weight-title">Вес</span>
+            </p>
+
+            <fieldset class="repeating_stackeditems">
+                <input class="sheet-inventory-name sheet-no-outline" type="text" name="attr_stacked_item_name"></input>
+                <input class="sheet-inventory-weight sheet-no-outline" type="text" name="attr_stacked_item_weight"></input>
+            </fieldset>
+
+            <p class="sheet-inventory-summary">
+                <span class="sheet-inventory-stacked-summary-title">Общий вес уложенных вещей</span>
+                <input class="sheet-inventory-summary-weight sheet-no-outline" type="text" name="attr_stacked_summary_weight"></input>
+            </p>
+        </div>
     </div>
 </div>

@@ -362,10 +362,52 @@
     color: #000000;
     font-family: Helvetica;
     border: 1px solid black;
-    width: 30px;
-    height: 15px;
+    width: 40px;
+    height: 20px;
     font-size: 12px;
     margin-right: 8px;
+}
+
+.charsheet .sheet-inventory-weight-title {
+    margin-left: 110px;
+}
+
+.charsheet .sheet-prepared-items-name-title {
+    margin-right: 6px;
+}
+
+.charsheet .sheet-stacked-items-name-title {
+    margin-right: 35px;
+}
+
+.charsheet .sheet-inventory-name {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    color: #000000;
+    font-family: Helvetica;
+    border-bottom: 1px solid black;
+    width: 75%;
+    height: 20px;
+    font-size: 12px;
+}
+
+.charsheet .sheet-inventory-weight {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    color: #000000;
+    font-family: Helvetica;
+    border-bottom: 1px solid black;
+    width: 15%;
+    height: 20px;
+    font-size: 12px;
+
+    margin-left: 5%;
 }
 
 .charsheet div.sheet-row-section {
@@ -384,6 +426,30 @@
     justify-content: center;
     align-items: right;
     align-content: right;
+}
+
+.charsheet .sheet-inventory-summary-weight {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    color: #000000;
+    font-family: Helvetica;
+    border-bottom: 1px solid black;
+    height: 20px;
+    font-size: 12px;
+
+    margin-left: 2%;
+    width: 15%;
+}
+
+.charsheet .sheet-inventory-prepared-summary-title {
+    margin-right: 22px;
+}
+
+.charsheet .sheet-inventory-stacked-summary-title {
+    margin-right: 50px;
 }
 
 .charsheet div.sheet-block .sheet-align-right {
