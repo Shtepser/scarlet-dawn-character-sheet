@@ -293,6 +293,60 @@
     border-radius: 50%;
 }
 
+.charsheet .sheet-weapons-stats-titles {
+    font-style: italic;
+    font-size: 10px;
+}
+
+.charsheet .sheet-weapon-description-title {
+    margin-left: 28px;
+}
+
+.charsheet .sheet-weapon-ammo-title {
+    margin-left: 25px;
+}
+
+.charsheet .sheet-weapon-attack-bonus-title {
+    margin-left: 10px;
+}
+
+.charsheet .sheet-weapon-damage-title {
+    margin-left: 10px;
+}
+
+.charsheet .sheet-weaponstat-box {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    color: #000000;
+    font-family: Helvetica;
+    border-bottom: 1px solid black;
+    height: 15px;
+    font-size: 12px;
+}
+
+.charsheet .sheet-weaponstat-description-box {
+    width: 25%;
+    margin-left: 0%;
+}
+
+.charsheet .sheet-weaponstat-ammo-box {
+    width: 25%;
+    margin-left: 2%;
+}
+
+.charsheet .sheet-weaponstat-attack-bonus-box {
+    width: 20%;
+    margin-left: 2%;
+}
+
+.charsheet .sheet-weaponstat-damage-box {
+    width: 15%;
+    margin-left: 2%;
+}
+
 .charsheet div.sheet-block {
     display: grid;
     justify-content: center;
