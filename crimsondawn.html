@@ -68,7 +68,6 @@
                 <input class="sheet-attrubutetextbox-halfwidth sheet-no-outline" type="text" name="attr_character_thirst"/>
             </span>
         </div>
-    
     </div>
   
     <div class="sheet-characteristics sheet-block">
@@ -244,9 +243,8 @@
                 Дух
             </span>
         </div>
-        
     </div>
-    
+ 
     <div class="sheet-weapon sheet-block">
         <div class="sheet-row-section">
             <span class="sheet-align-left-quarterwidth">
@@ -325,6 +323,79 @@
     <div class="sheet-magick sheet-block">
         <p class="sheet-pagetitle">
             <text>Магия</text>
+        </p>
+    </div>
+
+    <div class="sheet-magick-faith-points sheet-block">
+        <div>
+            <div class="sheet-row-section">
+                <span class="sheet-align-left-halfwidth">
+                    <p class="sheet-pageblocktitle sheet-magick-faith-points-block-title">Очки веры/колдовства</p>
+                </span>
+                <span class="sheet-align-right-halfwidth">
+                    <span class="sheet-magick-faith-points-max-title">Максимум</span>
+                    <input class="sheet-magicfaithpointsmaxbox sheet-no-outline" type="text" name="attr_max_magick_faith_points"></input>
+                </span>
+            </div>
+
+            <div class="sheet-row-section">
+                <p class="sheet-magick-faith-points-current-title">Текущие</p>
+                <input class="sheet-currentmagickfaithpointsbox sheet-no-outline" type="text" name="attr_current_magick_faith_points"></input>
+            </div>
+        </div>
+    </div>
+
+    <div class="sheet-allowed-spells sheet-block">
+        <p class="sheet-pageblocktitle">
+            <text>Доступные заклинания</text>
+        </p>
+
+        <div class="sheet-row-section">
+            <div class="sheet-align-left-halfwidth">
+                <input class="sheet-allowed-spell-checkbox" type="checkbox" name="attr_allowed_lesser_spells" value="1"> Младшие (1+)
+            </div>
+            <div class="sheet-align-left-halfwidth">
+                <input type="checkbox" name="attr_allowed_older_spells" value="1"> Старшие (4+)
+            </div>
+        </div>
+        <div class="sheet-row-section">
+            <div class="sheet-align-left-halfwidth">
+                <input class="sheet-allowed-spell-checkbox" type="checkbox" name="attr_allowed_greater_spells" value="1"> Великие (7+)
+            </div>
+            <div class="sheet-align-left-halfwidth">
+                <input type="checkbox" name="attr_allowed_legendary_spells" value="1"> Легендарные (13+)
+            </div>
+        </div>
+    </div>
+
+    <div class="sheet-priest-power-spheres sheet-block">
+        <div>
+            <p class="sheet-pageblocktitle">Сферы могущества жреца</p>
+            <p class="sheet-powershperes-help">
+                Две сферы на 1 уровне, ещё по одной на 3, 6, 9, 15 и 20 уровнях
+            </p>
+        </div>
+
+        <div>
+            <fieldset class="repeating_priestspheres">
+                <input class="sheet-priest-power-sphere-box sheet-no-outline" type="text" name="attr_priest_power_sphere"></input>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="sheet-allowed-spells-help sheet-block">
+        <p class="sheet-unallowed-powershperes-help">
+            Заклинания не из выбранных сфер стоят на 1 очко веры дороже.
+            Жрец должен пройти проверку мудрости или харизмы со сложностью
+        </p>
+            <ul class="sheet-unallowed-powershperes-help">
+                <li>9 для младшего заклинания</li>
+                <li class="sheet-unallowed-powershperes-help">11 для старшего</li>
+                <li class="sheet-unallowed-powershperes-help">13 для великого</li>
+                <li class="sheet-unallowed-powershperes-help">15 для легендарного</li>
+            </ul>
+        <p class="sheet-unallowed-powershperes-help">
+            При провале заклинание не срабатывает, а потраченные на него очки веры теряются. Жрец не может пытаться использовать любые заклинания этой сферы в течение дня.
         </p>
     </div>
 </div>
