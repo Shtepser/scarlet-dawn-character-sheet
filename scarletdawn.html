@@ -71,7 +71,7 @@
     </div>
   
     <div class="sheet-characteristics sheet-block">
-        <p class="sheet-pageblocktitle">
+        <p class="sheet-pageblocktitle sheet-pageblocktitle-background">
             <text>Характеристики</text>
         </p>
       
@@ -118,7 +118,7 @@
     </div>
   
     <div class="sheet-savingthrows sheet-block">
-        <p class="sheet-pageblocktitle">
+        <p class="sheet-pageblocktitle sheet-pageblocktitle-background">
             <text>Спасброски</text>
         </p>
       
@@ -163,11 +163,11 @@
     </div>
   
     <div class="sheet-hitpoints sheet-block">
-        <div class="sheet-row-section">
+        <div class="sheet-row-section sheet-pageblocktitle-background">
             <span class="sheet-align-left-halfwidth">
                 <p class="sheet-pageblocktitle-halfwidth">Хит-пойнты</p>
             </span>
-            <span class="sheet-align-right-halfwidth">
+            <span class="sheet-box-in-block-title sheet-align-right-halfwidth">
                 <text>Максимум</text>
                 <input class="sheet-maxhpbox sheet-no-outline" type="text" name="attr_max_hp"></input>
             </span>
@@ -180,7 +180,7 @@
     </div>
   
     <div class="sheet-feats sheet-block">
-        <p class="sheet-pageblocktitle">Черты</p>
+        <p class="sheet-pageblocktitle sheet-pageblocktitle-background">Черты</p>
         
         <fieldset class="repeating_feats">
             <input class="sheet-featbox sheet-no-outline" type="text" name="attr_featname">
@@ -188,7 +188,7 @@
     </div>
     
     <div class="sheet-scars sheet-block">
-        <p class="sheet-pageblocktitle">Шрамы</p>
+        <p class="sheet-pageblocktitle sheet-pageblocktitle-background">Шрамы</p>
 
         <fieldset class="repeating_scars">
             <input class="sheet-scarbox sheet-no-outline" type="text" name="attr_scarname">
@@ -196,11 +196,11 @@
     </div>
     
     <div class="sheet-armor sheet-block">
-        <div class="sheet-row-section">
+        <div class="sheet-row-section sheet-pageblocktitle-background">
             <span class="sheet-align-left-halfwidth">
                 <p class="sheet-pageblocktitle-halfwidth">Доспех</p>
             </span>
-            <span class="sheet-align-right-halfwidth">
+            <span class="sheet-box-in-block-title sheet-align-right-halfwidth sheet-armorclass-box-block">
                 <span class="sheet-armorclass-attr-name">КБ</span>
                 <input class="sheet-armorclassbox sheet-no-outline" type="text" name="attr_armorclass"></input>
             </span>
@@ -246,11 +246,11 @@
     </div>
  
     <div class="sheet-weapon sheet-block">
-        <div class="sheet-row-section">
+        <div class="sheet-row-section sheet-pageblocktitle-background">
             <span class="sheet-align-left-quarterwidth">
-                <p class="sheet-pageblocktitle-halfwidth">Оружие</p>
+                <p class="sheet-pageblocktitle-halfwidth sheet-weaponblock-title">Оружие</p>
             </span>
-            <span class="sheet-align-right-threequarterwidth">
+            <span class="sheet-box-in-block-title sheet-align-right-threequarterwidth">
                 <span class="sheet-attackbonus-attr-name">Базовый бонус атаки</span>
                 <input class="sheet-attackbonusbox sheet-no-outline" type="text" name="attr_attackbonus"></input>
             </span>
@@ -281,7 +281,7 @@
     <div class="sheet-inventory sheet-block">
 
         <div>
-            <p class="sheet-pageblocktitle">Инвентарь</p>
+            <p class="sheet-pageblocktitle sheet-pageblocktitle-background">Инвентарь</p>
 
             <p class="sheet-inventory-columns-titles">
                 <span class="sheet-inventory-name-title sheet-prepared-items-name-title">Подготовленные вещи</span>
@@ -328,11 +328,11 @@
 
     <div class="sheet-magick-faith-points sheet-block">
         <div>
-            <div class="sheet-row-section">
+            <div class="sheet-row-section sheet-pageblocktitle-background">
                 <span class="sheet-align-left-halfwidth">
-                    <p class="sheet-pageblocktitle sheet-magick-faith-points-block-title">Очки веры/колдовства</p>
+                    <p class="sheet-pageblocktitle sheet-pageblocktitle-halfwidth">Очки веры/колдовства</p>
                 </span>
-                <span class="sheet-align-right-halfwidth">
+                <span class="sheet-box-in-block-title sheet-align-right-halfwidth sheet-magicfaithpointsmaxbox-block">
                     <span class="sheet-magick-faith-points-max-title">Максимум</span>
                     <input class="sheet-magicfaithpointsmaxbox sheet-no-outline" type="text" name="attr_max_magick_faith_points"></input>
                 </span>
@@ -346,7 +346,7 @@
     </div>
 
     <div class="sheet-allowed-spells sheet-block">
-        <p class="sheet-pageblocktitle">
+        <p class="sheet-pageblocktitle sheet-pageblocktitle-background">
             <text>Доступные заклинания</text>
         </p>
 
@@ -370,7 +370,7 @@
 
     <div class="sheet-priest-power-spheres sheet-block">
         <div>
-            <p class="sheet-pageblocktitle">Сферы могущества жреца</p>
+            <p class="sheet-pageblocktitle sheet-pageblocktitle-background">Сферы могущества жреца</p>
             <p class="sheet-powershperes-help">
                 Две сферы на 1 уровне, ещё по одной на 3, 6, 9, 15 и 20 уровнях
             </p>
@@ -400,7 +400,7 @@
     </div>
 
     <div class="sheet-mage-spells-header sheet-block">
-        <p class="sheet-pageblocktitle">Заклинания мага</p>
+        <p class="sheet-pageblocktitle sheet-pageblocktitle-background">Заклинания мага</p>
         <p class="sheet-mage-spells-help">На первом уровне магу известно три заклинания плюс лучший из модификаторов его интеллекта или харизмы</p>
     </div>
 
@@ -413,7 +413,7 @@
     </div>
 
     <div class="sheet-spells-without-magic-points sheet-block">
-        <p class="sheet-pageblocktitle">Заклинания без очков колдовства</p>
+        <p class="sheet-pageblocktitle sheet-pageblocktitle-background">Заклинания без очков колдовства</p>
         <p class="sheet-spells-without-magick-points-help">
             Пройти проверку интеллекта или харизмы со сложностью 11; при каждой следующей попытке в тот же день сложность увеличивается на 2. При провале игрок должен бросить 2к6 по приведённой ниже таблице, чтобы определить последствия провала для своего персонажа. Если при проверке интеллекта выпала натуральная 2, вышедшая из-под контроля волшебная энергия затрагивает и соратников мага: последствия определяются броском 2к8 по таблице для каждого участника группы отдельно.
         </p>

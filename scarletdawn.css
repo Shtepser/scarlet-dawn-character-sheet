@@ -20,7 +20,7 @@
 }
 
 .sheet-tabstoggle[value="character"] ~ div.sheet-character-page {
-    grid-template-rows:    210px 30px 120px 30px 90px 60px 60px;
+    grid-template-rows:    210px 30px 150px 30px 90px 60px 60px;
     height: auto;
     visibility: visible;
 }
@@ -47,7 +47,7 @@
 }
 
 .sheet-tabstoggle[value="magick"] ~ div.sheet-magick-page {
-    grid-template-rows:    40px 60px 90px 260px 170px;
+    grid-template-rows:    40px 90px 90px 260px 170px;
     height: auto;
     visibility: visible;
 }
@@ -69,16 +69,42 @@
     margin-bottom: 9px;
 }
 
+.charsheet .sheet-pageblocktitle-background {
+    width: 270px;
+    height: 35px;
+
+    background-image: url(https://raw.githubusercontent.com/Shtepser/scarlet-dawn-character-sheet/master/img/block-title-background.png);
+    background-size: 270px 25px;
+    background-repeat: no-repeat;
+}
+
 .charsheet .sheet-pageblocktitle {
-    font-size: 16px;
+    font-size: 13px;
     text-align: left;
     width: 270px;
+    height: 35px;
+
+    padding-left: 5%;
+    padding-top: 1%;
 }
 
 .charsheet .sheet-pageblocktitle-halfwidth {
-    font-size: 16px;
+    font-size: 13px;
     text-align: left;
     width: 150px;
+
+    padding-left: 10%;
+    padding-top: 2%;
+}
+
+.charsheet .sheet-box-in-block-title {
+    margin-top: 1.5%;
+    font-size: 12px;
+}
+
+.charsheet .sheet-box-in-block-title input {
+    height: 13px;
+    width: 30px;
 }
 
 .charsheet .attribute-name {
@@ -287,6 +313,10 @@
     margin-right: 8px;
 }
 
+.charsheet .sheet-armorclass-box-block {
+    margin-top: 1.5%;
+}
+
 .charsheet input.sheet-armorclassbox {
     background: none;
     border-style: none;
@@ -333,6 +363,11 @@
 
 .charsheet .sheet-penalty-description input {
     border-radius: 50%;
+}
+
+.charsheet .sheet-weaponblock-title {
+    padding-top: 3%;
+    padding-left: 15%;
 }
 
 .charsheet .sheet-weapons-stats-titles {
@@ -451,6 +486,9 @@
     margin-left: 5%;
 }
 
+.charsheet .sheet-magicfaithpointsmaxbox-block {
+    margin-top: 1%;
+}
 
 .charsheet .sheet-magick-faith-points-block-title {
     font-size: 14px;
@@ -466,6 +504,8 @@
 .charsheet .sheet-magicfaithpointsmaxbox {
     width: 35%;
     height: 25px;
+
+    background: none;
 
     text-align: center;
 }
