@@ -57,6 +57,10 @@
     font-size: 12px;
 }
 
+.charsheet div.sheet-pagination-buttons {
+    margin-bottom: 25px;
+}
+
 .charsheet .sheet-pagetitle {
     text-decoration: underline;
     font-size: 20px;
