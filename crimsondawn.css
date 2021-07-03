@@ -388,8 +388,6 @@
 .charsheet div.sheet-block {
     display: grid;
     justify-content: center;
-
-    border: 1px solid black; /* remove before release */
 }
 
 .charsheet .sheet-attackbonusbox {
