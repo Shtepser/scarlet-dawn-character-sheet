@@ -39,11 +39,11 @@
     background: white;
 
     
-    grid-template-areas:"magick                      mage-spells-header"
-                        "magick-faith-points         mage-spells-header"
-                        "allowed-spells              mage-spells"
-                        "priest-power-spheres        mage-spells"
-                        "unallowed-powerspheres-help mage-spells";
+    grid-template-areas:"magick                      mage-spells-header spells-without-magic-points"
+                        "magick-faith-points         mage-spells-header spells-without-magic-points"
+                        "allowed-spells              mage-spells        spells-without-magic-points"
+                        "priest-power-spheres        mage-spells        spells-without-magic-points"
+                        "unallowed-powerspheres-help mage-spells        spells-without-magic-points";
 }
 
 .sheet-tabstoggle[value="magick"] ~ div.sheet-magick-page {
@@ -547,6 +547,12 @@
     font-size: 13px;
 }
 
+.charsheet .sheet-spells-without-magick-points-help {
+    font-size: 10px;
+    line-height: 12px;
+
+    font-style: italic;
+}
 
 .charsheet div.sheet-row-section {
     display: flex;
@@ -681,4 +687,8 @@
 
 .charsheet div.sheet-mage-spells {
     grid-area: mage-spells;
-} 
+}
+
+.charsheet div.sheet-spells-without-magic-points {
+    grid-area: spells-without-magic-points;
+}
