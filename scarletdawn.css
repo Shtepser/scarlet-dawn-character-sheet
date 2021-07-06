@@ -69,8 +69,15 @@
     margin-bottom: 9px;
 }
 
+.charsheet .sheet-pagetitle-background {
+
+    background-image: url(https://raw.githubusercontent.com/Shtepser/scarlet-dawn-character-sheet/master/img/corner-background.png);
+    background-size: 270px 40px;
+    background-repeat: no-repeat;
+}
+
 .charsheet .sheet-pageblocktitle-background {
-    width: 270px;
+    width: 280px;
     height: 35px;
 
     background-image: url(https://raw.githubusercontent.com/Shtepser/scarlet-dawn-character-sheet/master/img/block-title-background.png);
@@ -98,13 +105,26 @@
 }
 
 .charsheet .sheet-box-in-block-title {
-    margin-top: 1.5%;
+    margin-top: 1.3%;
     font-size: 12px;
 }
 
 .charsheet .sheet-box-in-block-title input {
     height: 13px;
     width: 30px;
+    font-size: 11px;
+
+    margin-right: 25px;
+
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    color: #000000;
+    font-family: Helvetica;
+    border: 1px solid black;
+
 }
 
 .charsheet .attribute-name {
@@ -129,6 +149,10 @@
 
 .charsheet .sheet-no-outline:focus {
     outline: none;
+}
+
+.charsheet .sheet-namelvl-attribute-endline {
+    margin-right: 15px;
 }
 
 .charsheet input.sheet-attrubutetextbox {
@@ -294,9 +318,6 @@
     font-family: Helvetica;
     border: 1px solid black;
     width: 30px;
-    height: 15px;
-    font-size: 12px;
-    margin-right: 8px;
 }
 
 .charsheet input.sheet-currenthpbox {
@@ -327,9 +348,6 @@
     font-family: Helvetica;
     border: 1px solid black;
     width: 30px;
-    height: 15px;
-    font-size: 12px;
-    margin-right: 8px;
 }
 
 .charsheet .sheet-armorclass-attr-name {
@@ -504,10 +522,6 @@
 .charsheet .sheet-magicfaithpointsmaxbox {
     width: 35%;
     height: 25px;
-
-    background: none;
-
-    text-align: center;
 }
 
 .charsheet .sheet-magick-faith-points-current-title {
