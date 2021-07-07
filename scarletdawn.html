@@ -1,4 +1,6 @@
 <script type="text/worker">
+
+    /* pages switching */
     const buttonlist = ["character","magick"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
@@ -7,6 +9,128 @@
             });
         });
     });
+
+    /* characteristics modifiers */
+    function characteristics_modifier(characteristic_score) {
+        if (characteristic_score <= 3)
+            return -2;
+        if (characteristic_score <= 7)
+            return -1;
+        if (characteristic_score <= 13)
+            return 0;
+        if (characteristic_score <= 17)
+            return 1;
+        return 2
+    };
+
+    function characteristics_modifier_string(characteristic_modifier) {
+        let mod_string = characteristic_modifier.toString();
+        if (characteristic_modifier > 0)
+            mod_string = '+' + mod_string;
+        return mod_string;
+    };
+
+    on("change:strength change:dexterity change:constitution change:wisdom change:intelligence change:charisma sheet:opened", function() {  
+      getAttrs(["strength", "dexterity", "constitution", "wisdom", "intelligence", "charisma"], function(values) {
+        let strength = parseInt(values.strength) || 0;
+        let dexterity = parseInt(values.dexterity) || 0;
+        let constitution = parseInt(values.constitution) || 0;
+        let wisdom = parseInt(values.wisdom) || 0;
+        let intelligence = parseInt(values.intelligence) || 0;
+        let charisma = parseInt(values.charisma) || 0;
+        setAttrs({                            
+          strength_mod: characteristics_modifier_string(characteristics_modifier(strength)),
+          dexterity_mod: characteristics_modifier_string(characteristics_modifier(dexterity)),
+          constitution_mod: characteristics_modifier_string(characteristics_modifier(constitution)),
+          wisdom_mod: characteristics_modifier_string(characteristics_modifier(wisdom)),
+          intelligence_mod: characteristics_modifier_string(characteristics_modifier(intelligence)),
+          charisma_mod: characteristics_modifier_string(characteristics_modifier(charisma))
+        });
+      });
+    });
+
+    /* Saving Throws */
+
+    function saving_throw_base(level) {
+        return 16 - level;
+    };
+
+    function saving_throw_modifier(first_characteristic_score, second_characteristic_score) {
+        let first_mod = characteristics_modifier(first_characteristic_score);
+        let second_mod = characteristics_modifier(second_characteristic_score);
+        return Math.max(first_mod, second_mod);
+    };
+
+    function saving_throw_modifier_string(modifier) {
+        let mod_string = modifier.toString();
+        if (modifier > 0)
+            mod_string = '-' + mod_string;
+        else if (modifier < 0)
+            mod_string = '+' + mod_string.substring(1);
+        return mod_string;
+    }
+
+    function saving_throw(base, modifier, penalty) {
+        return base - modifier + penalty;
+    };
+
+    on("change:level change:strength change:dexterity change:constitution change:wisdom change:intelligence change:charisma change:durability_penalty change:evasion_penalty change:spirit_penalty change:luck_penalty sheet:opened",
+    function() {  
+      getAttrs(["level", "strength", "dexterity", "constitution", "wisdom", "intelligence", "charisma", "durability_penalty", "evasion_penalty", "spirit_penalty", "luck_penalty"], function(values) {
+        let level = parseInt(values.level) || 0;
+
+        let strength = parseInt(values.strength) || 0;
+        let dexterity = parseInt(values.dexterity) || 0;
+        let constitution = parseInt(values.constitution) || 0;
+        let wisdom = parseInt(values.wisdom) || 0;
+        let intelligence = parseInt(values.intelligence) || 0;
+        let charisma = parseInt(values.charisma) || 0;
+
+        let durability_penalty = parseInt(values.durability_penalty) || 0;
+        let evasion_penalty = parseInt(values.evasion_penalty) || 0;
+        let spirit_penalty = parseInt(values.spirit_penalty) || 0;
+        let luck_penalty = parseInt(values.luck_penalty) || 0;
+
+        setAttrs({
+            durability_base: saving_throw_base(level),
+            durability_mod: saving_throw_modifier_string(saving_throw_modifier(strength, constitution)),
+            durability_saving: saving_throw(saving_throw_base(level), saving_throw_modifier(strength, constitution), durability_penalty),
+            evasion_base: saving_throw_base(level),
+            evasion_mod: saving_throw_modifier_string(saving_throw_modifier(dexterity, intelligence)),
+            evasion_saving: saving_throw(saving_throw_base(level), saving_throw_modifier(dexterity, intelligence), evasion_penalty),
+            spirit_base: saving_throw_base(level),
+            spirit_mod: saving_throw_modifier_string(saving_throw_modifier(wisdom, charisma)),
+            spirit_saving: saving_throw(saving_throw_base(level), saving_throw_modifier(wisdom, charisma), spirit_penalty),
+            luck_base: saving_throw_base(level),
+            luck_mod: 0,
+            luck_saving: saving_throw(saving_throw_base(level), 0, 0)
+        });
+      });
+    });
+
+    /* Magic & Faith max points */
+
+    on("change:class change:level change:wisdom change:intelligence change:charisma sheet:opened", function() {  
+      getAttrs(["class", "level", "wisdom", "intelligence", "charisma"], function(values) {
+        let char_class = values.class.toLowerCase() || "";
+        let level = parseInt(values.level) || 0;
+
+        let wisdom = parseInt(values.wisdom) || 0;
+        let intelligence = parseInt(values.intelligence) || 0;
+        let charisma = parseInt(values.charisma) || 0;
+
+        if (char_class.includes("жрец") && !char_class.includes("маг"))
+            setAttrs({
+                max_magick_faith_points: 2 + Math.max(characteristics_modifier(wisdom), characteristics_modifier(charisma)) + Math.ceil(level / 2)
+            });
+
+        if (char_class.includes("маг") && !char_class.includes("жрец"))
+            setAttrs({
+                max_magick_faith_points: 2 + Math.max(characteristics_modifier(intelligence), characteristics_modifier(charisma)) + Math.ceil(level / 2)
+            });
+      });
+    });
+
 </script>
 
 
@@ -31,7 +155,7 @@
         </p>
         <p class="sheet-align-right sheet-stat-row sheet-namelvl-attribute-endline">
             <span class="sheet-attribute-name">Класс</span>
-            <input class="sheet-attrubutetextbox sheet-no-outline" type="text" name="attr_character_class"/>
+            <input class="sheet-attrubutetextbox sheet-no-outline" type="text" name="attr_class"/>
         </p>
         <p class="sheet-align-right sheet-stat-row sheet-namelvl-attribute-endline">
             <span class="sheet-attribute-name">Цель</span>
@@ -41,7 +165,7 @@
         <div class="sheet-row-section sheet-stat-row">
             <span class="sheet-align-right-halfwidth">
                 <span class="sheet-attribute-name">Уровень</span>
-                <input class="sheet-attrubutetextbox-halfwidth sheet-no-outline" type="text" name="attr_character_level"/>
+                <input class="sheet-attrubutetextbox-halfwidth sheet-no-outline" type="text" name="attr_level"/>
             </span>
             <span class="sheet-align-right-halfwidth">
                 <span class="sheet-attribute-name">Опыт</span>
@@ -80,38 +204,38 @@
       
         <p class="sheet-align-right sheet-stat-row sheet-char-row">
             <span class="sheet-attribute-name sheet-char-name">Сила</span>
-            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_character_str"></input>
-            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_character_str_mod"></input>
+            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_strength"></input>
+            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_strength_mod"></input>
         </p>
       
         <p class="sheet-align-right sheet-stat-row sheet-char-row">
             <span class="sheet-attribute-name sheet-char-name">Ловкость</span>
-            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_character_dex"></input>
-            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_character_dex_mod"></input>
+            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_dexterity"></input>
+            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_dexterity_mod"></input>
         </p>
       
         <p class="sheet-align-right sheet-stat-row sheet-char-row">
             <span class="sheet-attribute-name sheet-char-name">Телосложение</span>
-            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_character_con"></input>
-            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_character_con_mod"></input>
+            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_constitution"></input>
+            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_constitution_mod"></input>
         </p>
       
         <p class="sheet-align-right sheet-stat-row sheet-char-row">
             <span class="sheet-attribute-name sheet-char-name">Мудрость</span>
-            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_character_wis"></input>
-            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_character_wis_mod"></input>
+            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_wisdom"></input>
+            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_wisdom_mod"></input>
         </p>
       
         <p class="sheet-align-right sheet-stat-row sheet-char-row">
             <span class="sheet-attribute-name sheet-char-name">Интеллект</span>
-            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_character_int"></input>
-            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_character_int_mod"></input>
+            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_intelligence"></input>
+            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_intelligence_mod"></input>
         </p>
       
         <p class="sheet-align-right sheet-stat-row sheet-char-row">
             <span class="sheet-attribute-name sheet-char-name">Харизма</span>
-            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_character_chr"></input>
-            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_character_chr_mod"></input>
+            <input class="sheet-statbox sheet-no-outline" type="text" name="attr_charisma"></input>
+            <input class="sheet-statmodbox sheet-no-outline" type="text" name="attr_charisma_mod"></input>
         </p>
     </div>
   
@@ -130,7 +254,7 @@
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_durability_base"></input>
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_durability_mod"></input>
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_durability_penalty"></input>
-            <input class="sheet-savingoutcomebox sheet-no-outline" type="text" name="attr_durability_result"></input>
+            <input class="sheet-savingoutcomebox sheet-no-outline" type="text" name="attr_durability_saving"></input>
         </p>
       
         <p class="sheet-align-right sheet-stat-row">
@@ -138,7 +262,7 @@
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_evasion_base"></input>
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_evasion_mod"></input>
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_evasion_penalty"></input>
-            <input class="sheet-savingoutcomebox sheet-no-outline" type="text" name="attr_evasion_result"></input>
+            <input class="sheet-savingoutcomebox sheet-no-outline" type="text" name="attr_evasion_saving"></input>
         </p>
       
         <p class="sheet-align-right sheet-stat-row">
@@ -146,7 +270,7 @@
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_spirit_base"></input>
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_spirit_mod"></input>
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_spirit_penalty"></input>
-            <input class="sheet-savingoutcomebox sheet-no-outline" type="text" name="attr_spirit_result"></input>
+            <input class="sheet-savingoutcomebox sheet-no-outline" type="text" name="attr_spirit_saving"></input>
         </p>
       
         <p class="sheet-align-right sheet-stat-row">
@@ -154,7 +278,7 @@
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_luck_base"></input>
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_luck_mod"></input>
             <input class="sheet-savingbox sheet-no-outline" type="text" name="attr_luck_penalty"></input>
-            <input class="sheet-savingoutcomebox sheet-no-outline" type="text" name="attr_luck_result"></input>
+            <input class="sheet-savingoutcomebox sheet-no-outline" type="text" name="attr_luck_saving"></input>
         </p>
     </div>
   
