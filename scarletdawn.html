@@ -131,6 +131,18 @@
       });
     });
 
+    /* Saving throws penalties */
+    on("change:has_durability_penalty change:has_evasion_penalty change:has_spirit_penalty sheet:opened", 
+        function() {
+            getAttrs(["has_durability_penalty", "has_evasion_penalty", "has_spirit_penalty"], function(values) {
+                setAttrs({
+                    durability_penalty: values.has_durability_penalty == 1 ? 3 : 0,
+                    evasion_penalty: values.has_evasion_penalty == 1 ? 3 : 0,
+                    spirit_penalty: values.has_spirit_penalty == 1 ? 3 : 0,
+                });
+            });
+    });
+
 </script>
 
 
@@ -351,15 +363,15 @@
                 Штраф спасброска
             </span>
             <span class="sheet-align-left-quarterwidth sheet-penalty-description">
-                <input type="checkbox" name="attr_hasdurabilitypenalty" value="1">
+                <input type="checkbox" name="attr_has_durability_penalty" value="1">
                 Стойк.
             </span>
             <span class="sheet-align-left-quarterwidth sheet-penalty-description">
-                <input type="checkbox" name="attr_hasevasionpenalty" value="1">
+                <input type="checkbox" name="attr_has_evasion_penalty" value="1">
                 Уклон.
             </span>
             <span class="sheet-align-left-quarterwidth sheet-penalty-description">
-                <input type="checkbox" name="attr_hasspiritpenalty" value="1">
+                <input type="checkbox" name="attr_has_spirit_penalty" value="1">
                 Дух
             </span>
         </div>
