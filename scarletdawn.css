@@ -195,6 +195,34 @@
     font-size: 12px;
 }
 
+.charsheet input.sheet-attrubutetextbox-halfwidth-masked {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    color: #000000;
+    font-family: Helvetica;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 20px;
+    font-size: 12px;
+}
+
+.charsheet input.sheet-attrubutetextbox-halfwidth-splitted {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    color: #000000;
+    font-family: Helvetica;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 19px;
+    font-size: 12px;
+}
+
 .charsheet input.sheet-featbox {
     background: none;
     border-style: none;
@@ -243,6 +271,14 @@
 .charsheet .sheet-savings-titles {
     font-style: italic;
     font-size: 10px;
+}
+
+.charsheet .sheet-halfwidth-mask {
+    padding-right: 11px;
+}
+
+.charsheet .sheet-halfwidth-mask-endline {
+    padding-right: 26px;
 }
 
 .charsheet .sheet-savings-base-title {

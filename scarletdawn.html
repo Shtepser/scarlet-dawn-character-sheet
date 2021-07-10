@@ -237,16 +237,20 @@
             </span>
             <span class="sheet-align-right-halfwidth">
                 <span class="sheet-attribute-name">Перебросы</span>
-                <input class="sheet-attrubutetextbox-halfwidth sheet-no-outline sheet-namelvl-attribute-endline" type="text" name="attr_character_rerolls"/>
+                <input class="sheet-attrubutetextbox-halfwidth-splitted sheet-no-outline sheet-namelvl-attribute" type="text" name="attr_character_rerolls_current"/>
+                <span>/</span>
+                <input class="sheet-attrubutetextbox-halfwidth-splitted sheet-no-outline sheet-namelvl-attribute-endline" type="text" name="attr_character_rerolls_max"/>
             </span>
         
             <span class="sheet-align-right-halfwidth">
                 <span class="sheet-attribute-name">Голод</span>
-                <input class="sheet-attrubutetextbox-halfwidth sheet-no-outline" type="text" name="attr_character_hunger"/>
+                <input class="sheet-attrubutetextbox-halfwidth-masked sheet-no-outline" type="text" name="attr_character_hunger"/>
+                <span class="sheet-halfwidth-mask"> / 7</span>
             </span>
             <span class="sheet-align-right-halfwidth">
                 <span class="sheet-attribute-name">Жажда</span>
-                <input class="sheet-attrubutetextbox-halfwidth sheet-no-outline sheet-namelvl-attribute-endline" type="text" name="attr_character_thirst"/>
+                <input class="sheet-attrubutetextbox-halfwidth-masked sheet-no-outline sheet-namelvl-attribute" type="text" name="attr_character_thirst"/>
+                <span class="sheet-halfwidth-mask-endline"> / 3</span>
             </span>
         </div>
     </div>
