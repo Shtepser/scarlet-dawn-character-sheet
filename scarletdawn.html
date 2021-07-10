@@ -137,6 +137,18 @@
 
     /* Allowed spells */
 
+    on("change:level sheet:opened", function() {
+        getAttrs(["level"], function(values) {
+            let level = parseInt(values.level) || 0;
+            setAttrs({
+                lesser_spells_allowed: level >= 1 ? 1 : 0,
+                older_spells_allowed: level >= 4 ? 1 : 0,
+                greater_spells_allowed: level >= 7 ? 1 : 0,
+                legendary_spells_allowed: level >= 13 ? 1 : 0
+            });
+        });
+    });
+
 </script>
 
 
@@ -478,18 +490,18 @@
 
         <div class="sheet-row-section">
             <div class="sheet-align-left-halfwidth">
-                <input class="sheet-allowed-spell-checkbox" type="checkbox" name="attr_allowed_lesser_spells" value="1"> Младшие (1+)
+                <input class="sheet-allowed-spell-checkbox" type="checkbox" name="attr_lesser_spells_allowed" value="1"> Младшие (1+)
             </div>
             <div class="sheet-align-left-halfwidth">
-                <input type="checkbox" name="attr_allowed_older_spells" value="1"> Старшие (4+)
+                <input type="checkbox" name="attr_older_spells_allowed" value="1"> Старшие (4+)
             </div>
         </div>
         <div class="sheet-row-section">
             <div class="sheet-align-left-halfwidth">
-                <input class="sheet-allowed-spell-checkbox" type="checkbox" name="attr_allowed_greater_spells" value="1"> Великие (7+)
+                <input class="sheet-allowed-spell-checkbox" type="checkbox" name="attr_greater_spells_allowed" value="1"> Великие (7+)
             </div>
             <div class="sheet-align-left-halfwidth">
-                <input type="checkbox" name="attr_allowed_legendary_spells" value="1"> Легендарные (13+)
+                <input type="checkbox" name="attr_legendary_spells_allowed" value="1"> Легендарные (13+)
             </div>
         </div>
     </div>
